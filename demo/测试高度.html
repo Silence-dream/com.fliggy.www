@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+ 
+
+<head>
+     
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="../lib/jQuery.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        /*滚动搜索框*/
+        .scroll-bar {
+            display: none;
+            position: fixed;
+            width: 100%;
+            z-index: 10000;
+            height: 50px;
+            background: #ff0036;
+        }
+
+        .con {
+            width: 800px;
+            height: 2000px;
+            border: 1px solid red;
+            margin: 0 auto
+        }
+    </style>
+     
+</head>
+ 
+
+<body>
+    <div class="scroll-bar"></div>
+    <div class="con">
+        <p>sbgdnnnnnd</p>
+        <p>sbgdnnnnnd</p>
+        <p>sbgdnnnnnd</p>
+        <p>sbgdnnnnnd</p>
+        <p>sbgdnnnnnd</p>
+        <p>sbgdnnnnnd</p>
+        <p>sbgdnnnnnd</p>
+        <p>sbgdnnnnnd</p>
+        <p>sbgdnnnnnd</p>
+        <p>sbgdnnnnnd</p>
+        <p>sbgdnnnnnd</p>
+        <p>sbgdnnnnnd</p>
+        <p>sbgdnnnnnd</p>
+        <p>sbgdnnnnnd</p>
+        <p>sbgdnnnnnd</p>
+        <p>sbgdnnnnnd</p>
+        <p>sbgdnnnnnd</p>
+        <p>sbgdnnnnnd</p>
+        <p>sbgdnnnnnd</p>
+        <p>sbgdnnnnnd</p>
+        <p>sbgdnnnnnd</p>
+        <p>sbgdnnnnnd</p>
+        <p>sbgdnnnnnd</p>
+        <p>sbgdnnnnnd</p>
+        <p>sbgdnnnnnd</p>
+        <p>sbgdnnnnnd</p>
+        <p>sbgdnnnnnd</p>
+        <p>sbgdnnnnnd</p>
+        <p>sbgdnnnnnd</p>
+        <p>sbgdnnnnnd</p>
+        <p>sbgdnnnnnd</p>
+        <p>sbgdnnnnnd</p>
+        <p>sbgdnnnnnd</p>
+        <p>sbgdnnnnnd</p>
+        <p>sbgdnnnnnd</p>
+        <p>sbgdnnnnnd</p>
+        <p>sbgdnnnnnd</p>
+        <p>sbgdnnnnnd</p>
+
+    </div>
+    <script>
+        $(function () {
+            const win = $(window);//得到窗口对象
+            const selector = $(".scroll-bar");//获取导航对象
+            var height = 100;//设置距离顶部偏移量
+            win.scroll(function () {
+                if (win.scrollTop() >= height) {
+                    selector.slideDown(800).css('display', 'block');
+                } else {
+                    selector.slideUp(800);
+                }
+            })
+        })
+    </script>
+     
+</body>
+
+</html>
