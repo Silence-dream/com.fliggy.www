@@ -96,9 +96,9 @@ body {
 }
 
 .search a img {
-  width: 15px;
-  height: 15px;
-  margin-right: 3px;
+  width: 0.4rem;
+  height: 0.4rem;
+  margin-right: 0.08rem;
   vertical-align: sub;
 }
 
@@ -110,6 +110,7 @@ body {
 /* 热搜 */
 .hot-search {
   height: 0.96rem;
+  font-size: 0.34667rem;
 }
 
 .hot-search span {
@@ -118,9 +119,10 @@ body {
 }
 
 .hot-search a {
+  font-size: 0.34667rem;
+  color: #fff;
   border: 0px solid black;
   border-radius: 24px;
-  color: #fff;
   background-color: rgba(255, 255, 255, 0.2);
   padding: 0.05333rem 0.16rem;
 }
@@ -136,7 +138,7 @@ body {
   width: 100%;
   overflow: hidden;
   position: relative;
-  border-radius: 6px;
+  border-radius: 0.16rem;
 }
 
 .layout .banner ul:first-child {
@@ -420,6 +422,7 @@ body {
   width: 3.12rem;
   height: 1.93333rem;
   margin-top: 0.21333rem;
+  margin: 0 auto;
 }
 
 /* 超级新发现 */
@@ -428,7 +431,7 @@ body {
   display: -ms-flexbox;
   display: flex;
   height: 6.21333rem;
-  border-radius: 6px;
+  border-radius: 0.16rem;
 }
 
 .discovery-left {
@@ -499,12 +502,14 @@ body {
 }
 
 .discovery-left a p span {
+  font-size: 0.37333rem;
   background-image: -webkit-gradient(linear, left top, right top, from(#ffe700), to(#ffc900));
   background-image: linear-gradient(to right, #ffe700, #ffc900);
-  border-radius: 6px;
-  padding: 0 6px;
+  border-radius: 0.16rem;
+  padding: 0 0.16rem;
 }
 
+/* 右边的两个打折玩意 */
 .discovery-right {
   -webkit-box-flex: 1;
       -ms-flex: 1;
@@ -518,6 +523,7 @@ body {
           flex-direction: column;
 }
 
+/* 超级特卖 */
 .discovery-sale {
   -webkit-box-flex: 1;
       -ms-flex: 1;
@@ -526,6 +532,77 @@ body {
   background-size: 100% 100%;
 }
 
+.discovery-sale > img {
+  width: 1.42667rem;
+  height: 0.46667rem;
+  margin: 0.36rem 0 0.32rem 0.25333rem;
+}
+
+.discovery-sale div:nth-of-type(1) {
+  margin-left: 0.24rem;
+}
+
+.discovery-sale div:nth-of-type(1):before, .discovery-sale div:nth-of-type(1):after {
+  content: "";
+  display: table;
+}
+
+.discovery-sale div:nth-of-type(1):after {
+  clear: both;
+}
+
+.discovery-sale div:nth-of-type(1) img {
+  float: left;
+  width: 0.36rem;
+  height: 0.34667rem;
+  margin: 0 0.10667rem;
+  vertical-align: middle;
+}
+
+.discovery-sale div:nth-of-type(1) span {
+  float: left;
+  font-size: 0.34667rem;
+  color: #333333;
+  font-weight: 700;
+}
+
+.discovery-sale div:nth-of-type(1) span:nth-of-type(3) {
+  font-size: 0.32rem;
+  color: #666666;
+  font-weight: 400;
+  margin-left: 0.08rem;
+}
+
+.discovery-sale div:nth-of-type(2) {
+  display: inline-block;
+  height: 0.58667rem;
+  line-height: 0.58667rem;
+  border-radius: 0.16rem;
+  margin: 0.24rem 0 0 0.24rem;
+  padding: 0 0.16rem 0 0.08rem;
+  background-color: #ff5000;
+}
+
+.discovery-sale div:nth-of-type(2):before, .discovery-sale div:nth-of-type(2):after {
+  content: "";
+  display: table;
+}
+
+.discovery-sale div:nth-of-type(2):after {
+  clear: both;
+}
+
+.discovery-sale div:nth-of-type(2) span {
+  float: left;
+  font-size: 0.32rem;
+  color: #ffffff;
+}
+
+.discovery-sale div:nth-of-type(2) span:nth-of-type(2) {
+  font-size: 0.37333rem;
+}
+
+/* 特价酒店 */
 .discovery-hotel {
   -webkit-box-flex: 1;
       -ms-flex: 1;
@@ -533,4 +610,46 @@ body {
   background: url(../images/discovery-background-2.webp);
   background-size: cover;
   background-position: center;
+}
+
+.discovery-hotel > span {
+  display: block;
+  font-size: 0.37333rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0.32rem 0 0 0.24rem;
+}
+
+.discovery-hotel div {
+  display: inline-block;
+  height: 0.58667rem;
+  line-height: 0.58667rem;
+  border-radius: 0.16rem;
+  margin: 0.24rem 0 0 0.24rem;
+  padding: 0 0.16rem 0 0.08rem;
+  background-color: #ff5000;
+}
+
+.discovery-hotel div:before, .discovery-hotel div:after {
+  content: "";
+  display: table;
+}
+
+.discovery-hotel div:after {
+  clear: both;
+}
+
+.discovery-hotel div span {
+  float: left;
+  color: #fff;
+}
+
+.discovery-hotel div span:nth-child(1) {
+  font-size: 0.37333rem;
+  font-weight: 700;
+}
+
+.discovery-hotel div span:nth-child(2) {
+  font-size: 0.32rem;
+  margin-left: 0.08rem;
 }

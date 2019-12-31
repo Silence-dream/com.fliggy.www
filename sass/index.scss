@@ -1,28 +1,4 @@
-*,
-::before,
-::after {
-    padding: 0;
-    margin: 0;
-    -webkit-box-sizing: border-box;
-    /*兼容移动端主流浏览器*/
-    box-sizing: border-box;
-    -webkit-tap-highlight-color: transparent;
-    /*清除移动端点击高亮效果*/
-}
-
-
-/*清除浮动*/
-.clearfix::before,
-.clearfix::after {
-    content: "";
-    display: block;
-    height: 0;
-    line-height: 0;
-    visibility: hidden;
-    clear: both;
-}
-
-
+@import "common.scss";
 
 // 以375为基准
 $baseFont:37.5;
@@ -101,9 +77,9 @@ body {
         line-height: 32rem/$baseFont;
 
         img {
-            width: 15px;
-            height: 15px;
-            margin-right: 3px;
+            width: 15rem/$baseFont;
+            height: 15rem/$baseFont;
+            margin-right: 3rem/$baseFont;
             vertical-align: sub;
         }
     }
@@ -118,6 +94,8 @@ body {
 .hot-search {
     height: 36rem/$baseFont;
 
+    font-size: 13rem/$baseFont;
+
     span {
         color: #ffffff;
         padding-left: 18rem/$baseFont;
@@ -125,9 +103,10 @@ body {
 
     a {
         // display: inline-block;
+        font-size: 13rem/$baseFont;
+        color: #fff;
         border: 0px solid black;
         border-radius: 24px;
-        color: #fff;
         background-color: rgba(255, 255, 255, 0.2);
         padding: 2rem/$baseFont 6rem/$baseFont;
     }
@@ -148,7 +127,7 @@ body {
         width: 100%;
         overflow: hidden;
         position: relative;
-        border-radius: 6px;
+        border-radius: 6rem/$baseFont;
 
         ul:first-child {
             width: 1000%;
@@ -409,6 +388,7 @@ body {
             width: 117rem/$baseFont;
             height: 72.5rem/$baseFont;
             margin-top: 8rem/$baseFont;
+            margin: 0 auto;
         }
     }
 }
@@ -417,7 +397,7 @@ body {
 .discovery {
     display: flex;
     height: 233rem/$baseFont;
-    border-radius: 6px;
+    border-radius: 6rem/$baseFont;
 }
 
 .discovery-left {
@@ -450,6 +430,7 @@ body {
                 margin-right: 5rem/$baseFont;
             }
 
+            // 日期设置
             span {
                 font-size: 14rem/$baseFont;
                 color: #ffc900;
@@ -477,29 +458,130 @@ body {
             margin-left: 9rem/$baseFont;
 
             span {
+                font-size: 14rem/$baseFont;
                 background-image: linear-gradient(to right, rgb(255, 231, 0), rgb(255, 201, 0));
-                border-radius: 6px;
-                padding: 0 6px;
+                border-radius: 6rem/$baseFont;
+                padding: 0 6rem/$baseFont;
             }
         }
     }
 }
 
+/* 右边的两个打折玩意 */
 .discovery-right {
     flex: 1;
     display: flex;
     flex-direction: column;
 }
 
+/* 超级特卖 */
 .discovery-sale {
     flex: 1;
     background: url(../images/discovery-background.webp);
     background-size: 100% 100%;
+
+    >img {
+        width: 53.5rem/$baseFont;
+        height: 17.5rem/$baseFont;
+        margin: 13.5rem/$baseFont 0 12rem/$baseFont 9.5rem/$baseFont;
+    }
+
+    // 设置字部分
+    div {
+
+        // 第一div
+        &:nth-of-type(1) {
+            margin-left: 9rem/$baseFont;
+            @include clearfix();
+
+            // background-color: red;
+            img {
+                float: left;
+                width: 13.5rem/$baseFont;
+                height: 13rem/$baseFont;
+                margin: 0 4rem/$baseFont;
+                vertical-align: middle;
+            }
+
+            span {
+                float: left;
+                font-size: 13rem/$baseFont;
+                color: #333333;
+                font-weight: 700;
+
+                // 最后字的修改
+                &:nth-of-type(3) {
+                    font-size: 12rem/$baseFont;
+                    color: #666666;
+                    font-weight: 400;
+                    margin-left: 3rem/$baseFont;
+                }
+            }
+        }
+
+        // 第二个div
+        &:nth-of-type(2) {
+            display: inline-block;
+            height: 22rem/$baseFont;
+            line-height: 22rem/$baseFont;
+            border-radius: 6rem/$baseFont;
+            margin: 9rem/$baseFont 0 0 9rem/$baseFont;
+            padding: 0 6rem/$baseFont 0 3rem/$baseFont;
+            @include clearfix();
+
+            span {
+                float: left;
+                font-size: 12rem/$baseFont;
+                color: #ffffff;
+
+                &:nth-of-type(2) {
+                    font-size: 14rem/$baseFont;
+                }
+            }
+
+            background-color: #ff5000;
+        }
+    }
 }
 
+/* 特价酒店 */
 .discovery-hotel {
     flex: 1;
     background: url(../images/discovery-background-2.webp);
     background-size: cover;
     background-position: center;
+
+    >span {
+        display: block;
+        font-size: 14rem/$baseFont;
+        font-weight: 700;
+        color: #ffffff;
+        margin: 12rem/$baseFont 0 0 9rem/$baseFont;
+    }
+
+    div {
+        display: inline-block;
+        height: 22rem/$baseFont;
+        line-height: 22rem/$baseFont;
+        border-radius: 6rem/$baseFont;
+        margin: 9rem/$baseFont 0 0 9rem/$baseFont;
+        padding: 0 6rem/$baseFont 0 3rem/$baseFont;
+        background-color: #ff5000;
+        @include clearfix();
+
+        span {
+            float: left;
+            color: #fff;
+
+            &:nth-child(1) {
+                font-size: 14rem/$baseFont;
+                font-weight: 700;
+            }
+
+            &:nth-child(2) {
+                font-size: 12rem/$baseFont;
+                margin-left: 3rem/$baseFont;
+            }
+        }
+    }
 }
