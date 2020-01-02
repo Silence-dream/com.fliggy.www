@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>飞猪APP</title>
+    <link rel="stylesheet" href="./css/normalize.css">
+    <!-- <script src="./lib/flexible/flexible.js"></script> -->
+    <script src="./lib/flexible/flexible_css.debug.js"></script>
+    <script src="./lib/flexible/flexible.debug.js"></script>
+    <link rel="stylesheet" href="./css/fliggyApp.min.css">
+</head>
+
+<body>
+    <div class="figgy" id="figgy">
+        <div class="btn-router-box">
+            <a href="./iosapp.html">立即前往</a>
+        </div>
+    </div>
+    <script>
+        /* 获取html的高度 */
+        let h = document.body.scrollHeight;
+        let figgy = document.getElementById("figgy");
+        console.log(h)
+        figgy.style.height = `${h}px`;
+    </script>
+</body>
+
+</html>

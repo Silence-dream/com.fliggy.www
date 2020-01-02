@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>飞猪官网</title>
     <link rel="stylesheet" href="./css/normalize.css">
     <script src="./lib/flexible/flexible.js"></script>
     <!-- <script src="./lib/flexible/flexible_css.debug.js"></script> -->
@@ -19,7 +19,33 @@
         <!-- 顶部 -->
         <div class="top-nav">
             <div class="feizhu-logo"><img src="./images/feizhu-logo.png" alt=""></div>
-            <div class="feizhu-user"><img src="./images/user.png" alt=""></div>
+            <div class="feizhu-user" id="user"><img src="./images/user.png" alt=""></div>
+            <div class="feizhu-user-list" id="user-list">
+                <div class="feizhu-user-list-content">
+                    <img src="./images/sanjiao-top.png" alt="" class="feizhu-user-list-content-one">
+                    <a href="#">
+                        <div><img src="./images/feizhu-user-list1.png" alt=""><span>我的订单</span></div>
+                    </a>
+                    <a href="#">
+                        <div><img src="./images/feizhu-user-list2.png" alt=""><span>我的行程</span></div>
+                    </a>
+                    <a href="#">
+                        <div><img src="./images/feizhu-user-list3.png" alt=""><span>我的收藏</span></div>
+                    </a>
+                    <a href="#">
+                        <div><img src="./images/feizhu-user-list4.png" alt=""><span>我的红包</span></div>
+                    </a>
+                    <a href="#">
+                        <div><img src="./images/feizhu-user-list5.png" alt=""><span>会员中心</span></div>
+                    </a>
+                    <a href="#">
+                        <div><img src="./images/feizhu-user-list6.png" alt=""><span>购物车</span></div>
+                    </a>
+                    <a href="#">
+                        <div><img src="./images/feizhu-user-list7.png" alt=""><span>联系飞猪</span></div>
+                    </a>
+                </div>
+            </div>
         </div>
         <!-- 搜索栏 -->
         <div class="search">
@@ -212,15 +238,273 @@
 
 
 
-
     </div>
     <!-- container结束 -->
 
+
+    <!--  -->
+    <!-- 当季旅游 -->
+    <div class="season-travel">
+        <div class="season-travel-top">
+            <h2>当季旅游地</h2>
+            <span>探索更多的目的地<img src="./images/right-deltoid.png" alt=""></span>
+        </div>
+        <div class="season-travel-bottom">
+            <ul>
+                <li><a href="#"><span>成都</span></a></li>
+                <li><a href="#"><span>香港</span></a></li>
+                <li><a href="#"><span>曼谷</span></a></li>
+                <li><a href="#"><span>惠州</span></a></li>
+                <li><a href="#"><span>丽江</span></a></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <!-- 旅行主题 -->
+        <div class="motif-travel">
+            <!-- 标题 -->
+            <div class="motif-travel-top">
+                <h2>旅行主题</h2>
+                <span>最适合你的旅行方式</span>
+            </div>
+            <!-- 内容 -->
+            <div class="motif-travel-bottom">
+                <!-- 内容第一行 -->
+                <div class="motif-travel-bottom-1">
+                    <a href="#">
+                        <h3>周末去哪儿</h3>
+                        <span>值得用心对待</span>
+                    </a>
+                    <a href="#">
+                        <h3>江浙沪包游</h3>
+                        <span>江南水乡荡悠悠</span>
+                    </a>
+                </div>
+                <!-- 内容第二行 -->
+                <div class="motif-travel-bottom-2">
+                    <a href="#">
+                        <h3>摄影爱好者</h3>
+                        <span>随手一拍是大片</span>
+                    </a>
+                    <a href="#">
+                        <h3>泰国必去</h3>
+                        <span>独特泰享受</span>
+                    </a>
+                    <a href="#">
+                        <h3>男生最爱玩</h3>
+                        <span>热血老司机</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 旅行直播 -->
+        <div class="live-travel">
+            <div class="motif-travel-top">
+                <h2>旅行直播</h2>
+                <span>达人带你看世界</span>
+            </div>
+            <div class="live-travel-content">
+                <a href="#">
+                    <h3>2019旅行图片回顾</h3>
+                    <div>
+                        <div class="live-travel-content-2">
+                            <img src="./images/live-travel3.webp" alt="">
+                            <span>280看过</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="#">
+                    <h3>浪漫海岸|元旦音乐节</h3>
+                    <div>
+                        <div class="live-travel-content-2">
+                            <img src="./images/live-travel3.webp" alt="">
+                            <span>66看过</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!--  -->
+        </div>
+
+        <!-- 猜你喜欢 -->
+        <div class="guess-like">
+            <div class="motif-travel-top">
+                <h2>猜你喜欢</h2>
+                <span>你想要的旅行好货</span>
+            </div>
+
+            <div class="guess-like-content">
+                <div class="guess-like-row">
+                    <a href="#">
+                        <div class="guess-like-content-top">
+                            <img src="./images/like1.webp" alt="">
+                        </div>
+                        <div class="guess-like-content-bottom">
+                            <p>北京·当地玩乐</p>
+                            <h3>北京奥斯汀庄园（城堡区）2天1晚自由行＋双份早餐＋独立私汤温泉</h3>
+                            <div>
+                                <!-- <span> -->
+                                <span>&yen;</span>
+                                <span>590</span>
+                                <span>27人购买</span>
+                                <img src="./images/sl.png" alt="">
+                                <!-- </span> -->
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="guess-like-row">
+                    <a href="#">
+                        <div class="guess-like-content-top">
+                            <img src="./images/like1.webp" alt="">
+                        </div>
+                        <div class="guess-like-content-bottom">
+                            <p>北京·当地玩乐</p>
+                            <h3>北京奥斯汀庄园（城堡区）2天1晚自由行＋双份早餐＋独立私汤温泉</h3>
+                            <div>
+                                <!-- <span> -->
+                                <span>&yen;</span>
+                                <span>590</span>
+                                <span>27人购买</span>
+                                <img src="./images/sl.png" alt="">
+                                <!-- </span> -->
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="guess-like-content">
+                <div class="guess-like-row">
+                    <a href="#">
+                        <div class="guess-like-content-top">
+                            <img src="./images/like1.webp" alt="">
+                        </div>
+                        <div class="guess-like-content-bottom">
+                            <p>北京·当地玩乐</p>
+                            <h3>北京奥斯汀庄园（城堡区）2天1晚自由行＋双份早餐＋独立私汤温泉</h3>
+                            <div>
+                                <!-- <span> -->
+                                <span>&yen;</span>
+                                <span>590</span>
+                                <span>27人购买</span>
+                                <img src="./images/sl.png" alt="">
+                                <!-- </span> -->
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="guess-like-row">
+                    <a href="#">
+                        <div class="guess-like-content-top">
+                            <img src="./images/like1.webp" alt="">
+                        </div>
+                        <div class="guess-like-content-bottom">
+                            <p>北京·当地玩乐</p>
+                            <h3>北京奥斯汀庄园（城堡区）2天1晚自由行＋双份早餐＋独立私汤温泉</h3>
+                            <div>
+                                <!-- <span> -->
+                                <span>&yen;</span>
+                                <span>590</span>
+                                <span>27人购买</span>
+                                <img src="./images/sl.png" alt="">
+                                <!-- </span> -->
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="guess-like-content">
+                <div class="guess-like-row">
+                    <a href="#">
+                        <div class="guess-like-content-top">
+                            <img src="./images/like1.webp" alt="">
+                        </div>
+                        <div class="guess-like-content-bottom">
+                            <p>北京·当地玩乐</p>
+                            <h3>北京奥斯汀庄园（城堡区）2天1晚自由行＋双份早餐＋独立私汤温泉</h3>
+                            <div>
+                                <!-- <span> -->
+                                <span>&yen;</span>
+                                <span>590</span>
+                                <span>27人购买</span>
+                                <img src="./images/sl.png" alt="">
+                                <!-- </span> -->
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="guess-like-row">
+                    <a href="#">
+                        <div class="guess-like-content-top">
+                            <img src="./images/like1.webp" alt="">
+                        </div>
+                        <div class="guess-like-content-bottom">
+                            <p>北京·当地玩乐</p>
+                            <h3>北京奥斯汀庄园（城堡区）2天1晚自由行＋双份早餐＋独立私汤温泉</h3>
+                            <div>
+                                <!-- <span> -->
+                                <span>&yen;</span>
+                                <span>590</span>
+                                <span>27人购买</span>
+                                <img src="./images/sl.png" alt="">
+                                <!-- </span> -->
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="guess-like-content">
+                <div class="guess-like-row">
+                    <a href="#">
+                        <div class="guess-like-content-top">
+                            <img src="./images/like1.webp" alt="">
+                        </div>
+                        <div class="guess-like-content-bottom">
+                            <p>北京·当地玩乐</p>
+                            <h3>北京奥斯汀庄园（城堡区）2天1晚自由行＋双份早餐＋独立私汤温泉</h3>
+                            <div>
+                                <!-- <span> -->
+                                <span>&yen;</span>
+                                <span>590</span>
+                                <span>27人购买</span>
+                                <img src="./images/sl.png" alt="">
+                                <!-- </span> -->
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="guess-like-row">
+                    <a href="#">
+                        <div class="guess-like-content-top">
+                            <img src="./images/like1.webp" alt="">
+                        </div>
+                        <div class="guess-like-content-bottom">
+                            <p>北京·当地玩乐</p>
+                            <h3>北京奥斯汀庄园（城堡区）2天1晚自由行＋双份早餐＋独立私汤温泉</h3>
+                            <div>
+                                <!-- <span> -->
+                                <span>&yen;</span>
+                                <span>590</span>
+                                <span>27人购买</span>
+                                <img src="./images/sl.png" alt="">
+                                <!-- </span> -->
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <!-- 轮播图js -->
     <script src="./js/base.js"></script>
     <script src="./js/slideshow.js"></script>
+    <!-- 页面js -->
+    <script src="./js/index.js"></script>
 </body>
 
 </html>

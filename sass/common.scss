@@ -1,3 +1,4 @@
+$baseFont:37.5;
 // 清除浮动
 
 @mixin clearfix {
@@ -36,4 +37,29 @@
     line-height: 0;
     visibility: hidden;
     clear: both;
+}
+
+ul {
+    list-style: none;
+}
+
+
+/* 字体图标 */
+
+@font-face {
+    font-family: 'iconfont';
+    src: url('../fonts/iconfont.eot');
+    src: url('../fonts/iconfont.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/iconfont.woff2') format('woff2'),
+        url('../fonts/iconfont.woff') format('woff'),
+        url('../fonts/iconfont.ttf') format('truetype'),
+        url('../fonts/iconfont.svg#iconfont') format('svg');
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
