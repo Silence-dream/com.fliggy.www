@@ -1,0 +1,103 @@
+/* 承诺 */
+.promise {
+    padding: 10px 16px;
+}
+
+.promise-content {
+    display: flex;
+}
+
+.promise-content>img {
+    width: 59px;
+    height: 20px;
+}
+
+.promise-content-text {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.promise-content-text img {
+    width: 12px;
+    height: 12px;
+}
+
+/* 促销 */
+.promotion {
+    display: flex;
+}
+
+.promotion span {
+    font-size: 14px;
+}
+
+.promotion-left {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.promotion-left span {
+    color: #999999;
+}
+
+.promotion-right {
+    flex: 8;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.promotion-right-row img {
+    width: 47px;
+    height: 14px;
+}
+
+.promotion-right-row span {
+    color: #333333;
+}
+
+.introduce {
+    padding: 10px 16px;
+
+    h2 {
+        font-size: 16px;
+    }
+}
+
+.introduce-content {
+    p {
+        width: 100%;
+        height: 100%;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.else {
+    padding: 10px 16px;
+
+    h2 {
+        font-size: 16px;
+        color: #333333;
+    }
+
+    h3 {
+        font-size: 12px;
+    }
+
+    .else-content {
+        p {
+            font-size: 14px;
+            color: #666666;
+        }
+    }
+}

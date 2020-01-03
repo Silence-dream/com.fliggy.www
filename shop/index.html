@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover">
+  <title>卖卡了卖卡了啊</title>
+
+  <!-- 引入样式文件 -->
+  <link rel="stylesheet" href="./css/vue.css">
+  <link rel="stylesheet" href="./css/index.css">
+  <!-- 自定义样式 -->
+  <style>
+    body {
+      color: #333;
+      background-color: #f8f8f8;
+    }
+
+    .goods {
+      padding-bottom: 50px;
+    }
+
+    .goods-swipe img {
+      width: 100%;
+      display: block;
+    }
+
+    .goods-title {
+      font-size: 16px;
+    }
+
+    .goods-price {
+      color: #f44;
+    }
+
+    .goods-express {
+      font-size: 12px;
+      padding: 5px 15px;
+    }
+
+    .goods-cell-group {
+      margin: 15px 0;
+    }
+
+    .goods-tag {
+      margin-left: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <!-- 模板 -->
+    <div class="goods">
+      <van-swipe class="goods-swipe" :autoplay="3000">
+        <van-swipe-item v-for="thumb in goods.thumb" :key="thumb">
+          <img :src="thumb">
+        </van-swipe-item>
+      </van-swipe>
+      <van-cell-group>
+        <van-cell>
+          <div class="goods-title">{{ goods.title }}</div>
+          <div class="goods-price">{{ formatPrice(goods.price) }}</div>
+        </van-cell>
+        <!-- 承诺 -->
+        <div class="promise">
+          <div class="promise-content">
+            <img src="../images/feizhu-logo2.png" alt="">
+            <div class="promise-content-text">
+              <div>
+                <img src="../images/yourright.png" alt="">
+                <span>使用保障</span>
+              </div>
+              <div class="promise-content-text">
+                <img src="../images/yourright.png" alt="">
+                <span>承诺不加价</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 承诺结束 -->
+        <van-cell class="goods-express">
+          <van-col span="10">运费：{{ goods.express }}</van-col>
+          <van-col span="14">剩余：{{ goods.remain }}</van-col>
+        </van-cell>
+      </van-cell-group>
+      <!-- 促销 -->
+      <van-cell-group class="goods-cell-group">
+        <div class="promotion">
+          <!-- 左 -->
+          <div class="promotion-left">
+            <span>促销</span>
+          </div>
+          <!-- 右 -->
+          <div class="promotion-right">
+            <!-- 第一行 -->
+            <div class="promotion-right-row">
+              <img src="../images/promotion1.png" alt="">
+              <span>泰国购物礼包</span>
+            </div>
+            <!-- 第二行 -->
+            <div class="promotion-right-row">
+              <img src="../images/promotion2.png" alt="">
+              <span>购买可送26飞猪里程</span>
+            </div>
+          </div>
+        </div>
+
+      </van-cell-group>
+      <van-cell-group class="goods-cell-group">
+        <van-cell value="进入店铺" icon="shop-o" is-link @click="enterShop">
+          <template slot="title">
+            <span class="van-cell-text">深圳众萌旅游专卖店</span>
+            <!-- <van-tag class="goods-tag" type="danger">官方</van-tag> -->
+          </template>
+        </van-cell>
+        <van-cell title="查看商品详情" is-link @click="showGoodsDetail" />
+      </van-cell-group>
+      <!-- 图文介绍 -->
+      <van-cell-group class="goods-cell-group">
+
+        <div class="introduce">
+          <h2>图文介绍</h2>
+          <div class="introduce-content">
+            <p>
+              <img src="../upload/introduce-p1.webp" alt="">
+              <img src="../upload/introduce-p2.gif" alt="">
+              <img src="../upload/introduce-p3.gif" alt="">
+              <img src="../upload/introduce-p4.gif" alt="">
+              <img src="../upload/introduce-p5.gif" alt="">
+              <img src="../upload/introduce-p6.gif" alt="">
+              <img src="../upload/introduce-p7.gif" alt="">
+              <img src="../upload/introduce-p8.gif" alt="">
+              <img src="../upload/introduce-p9.gif" alt="">
+            </p>
+          </div>
+        </div>
+
+      </van-cell-group>
+      <!-- 其他说明 -->
+      <van-cell-group class="goods-cell-group">
+        <div class="else">
+          <h2>其他说明</h2>
+          <div class="else-content">
+            <p>适用地点:香港，3天共72小时2GB流量上网，7天7GB上网</p>
+          </div>
+        </div>
+      </van-cell-group>
+      <!-- 说明结束 -->
+      <!--  -->
+      <!-- 其他说明 -->
+      <van-cell-group class="goods-cell-group">
+        <div class="else">
+          <h2>费用包含</h2>
+          <div class="else-content">
+            <p>自取：单价×张数。 </p>
+            <p>邮寄：单价×张数+邮费 </p>
+          </div>
+        </div>
+      </van-cell-group>
+      <!-- 说明结束 -->
+      <!--  -->
+      <!-- 其他说明 -->
+      <van-cell-group class="goods-cell-group">
+        <div class="else">
+          <h2>退改规则</h2>
+          <div class="else-content">
+            <p>1.已发货本店不支持退款，因产品不属于7天无理由退换货商品，请熟知。 </p>
+            <p>2.若因发错货或者产品质量问题，本店则提供无条件退换货并承担来回运费。</p>
+          </div>
+        </div>
+      </van-cell-group>
+      <!-- 说明结束 -->
+      <!--  -->
+      <!-- 其他说明 -->
+      <van-cell-group class="goods-cell-group">
+        <div class="else">
+          <h2>预定须知</h2>
+          <div class="else-content">
+            <p>1.凡在非覆盖地区插卡，造成的无法使用或者余额、使用天数改变的将不予退换货。 </p>
+            <p>2.凡因手机型号不适合造成无法使用，不予退换货。 </p>
+            <p>3.本店负责提供正常运作的电话卡，并为买家提供旺旺在线服务，如遇故障，买家需向运营商或者本店如实反映，且保持联系至排除故障，并按照服务人员的要求截图以作凭证。 </p>
+            <p>4.运营商保留随时更改套餐内容而不告知消费者的权利，运营商会因技术升级网络改造等原因，偶尔发生推迟激活等现象。本店只保证购买之日的套餐、使用等内容符合描述。
+            </p>
+            <p>5.如因运营商原因造成的损失，本店无法承担售价以外的其他损失。 </p>
+            <p>6.购买本店产品时，必须仔细阅读本条款以及各种表格中和详情所表达说明与备注，如没有阅读或对本条款持异议者，请勿购买。 </p>
+            <p>7.购买商品时，商品在18点之前付款的订单，如无特殊情况会进行当天安排发货，18点之后付款的订单隔天发货，请谅解。</p>
+          </div>
+        </div>
+      </van-cell-group>
+      <!-- 说明结束 -->
+      <!--  -->
+      <van-cell-group class="goods-cell-group">
+        <div class="else">
+          <h2>价格说明</h2>
+          <div class="else-content">
+            <h3>划线价格</h3>
+            <p>指商品的门市价、零售价、服务提供商指导价或该商品的曾经展示过的销售价等，并非原价，仅供参考。 </p>
+            <h3>未划线价格</h3>
+            <p>指商品在飞猪上的实时售价，不因表述的差异改变性质。具体成交价格根据商品参加活动，或会员使用优惠券、积分、里程等发生变化，最终以订单结算页价格为准。</p>
+            <p>商家详情页（含主图）以图片或文字形式标注的一口价、促销价、优惠价等价格可能是在使用优惠券、满减或特定优惠活动和时段等情形下的价格，具体请以结算页面的标价、优惠条件或活动规则为准。</p>
+            <p>此说明仅当出现价格比较时有效，具体请参见《淘宝价格发布规范》。若商家单独对划线价格进行说明的，以商家的表述为准。</p>
+          </div>
+        </div>
+      </van-cell-group>
+      <!-- 说明结束 -->
+
+
+
+      <!--  -->
+      <van-goods-action>
+        <van-goods-action-icon icon="chat-o" @click="showChat">
+          客服
+        </van-goods-action-icon>
+        <van-goods-action-icon icon="cart-o" @click="showCart">
+          购物车
+        </van-goods-action-icon>
+        <van-goods-action-button type="warning" @click="addCart">
+          加入购物车
+        </van-goods-action-button>
+        <van-goods-action-button type="danger" @click="buy">
+          立即购买
+        </van-goods-action-button>
+      </van-goods-action>
+
+    </div>
+  </div>
+
+  <!-- 引入 Vue 和 Vant 的 JS 文件 -->
+  <script src="./lib/vue.js"></script>
+  <script src="./lib/vant.js"></script>
+
+  <script>
+    // 初始化 Vue 实例
+    new Vue({
+      el: '#app',
+
+      data() {
+        return {
+          goods: {
+            title: '香港电话卡3/7天高速4G流量手机上网卡可接打电话香港流量包',
+            price: 5200,
+            express: '免运费',
+            remain: 19,
+            thumb: [
+              '../upload/card1.webp',
+              '../upload/card2.webp',
+              '../upload/card3.webp',
+              '../upload/card4.webp',
+            ]
+          }
+        };
+      },
+
+      methods: {
+        formatPrice() {
+          return '¥' + (this.goods.price / 100).toFixed(2);
+        },
+
+        enterShop() {
+          vant.Toast('进入店铺');
+        },
+
+        showGoodsDetail() {
+          vant.Toast('查看商品详情');
+        },
+
+        showChat() {
+          vant.Toast('进入客服页面');
+        },
+
+        showCart() {
+          vant.Toast('进入购物车页面');
+        },
+
+        addCart() {
+          vant.Toast('加入购物车');
+        },
+
+        buy() {
+          vant.Toast('立即购买');
+        }
+      }
+    });
+  </script>
+
+
+
+
+  <script>
+    // import Vue from 'vue';
+    // import { Button } from 'vant';
+
+    // Vue.use(Button);
+
+
+  </script>
+</body>
+
+</html>

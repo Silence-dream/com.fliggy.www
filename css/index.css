@@ -120,6 +120,7 @@ body {
 .feizhu-user-list .feizhu-user-list-content a {
   display: block;
   height: 1.17333rem;
+  line-height: 1.17333rem;
 }
 
 .feizhu-user-list .feizhu-user-list-content .feizhu-user-list-content-one {
@@ -155,7 +156,12 @@ body {
 }
 
 .search a {
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: 0.85333rem;
   margin-left: 0.32rem;
   margin-right: 0.32rem;
@@ -164,14 +170,12 @@ body {
   border-bottom-right-radius: 1.33333rem;
   border-bottom-left-radius: 1.33333rem;
   background-color: #fff;
-  line-height: 0.85333rem;
 }
 
 .search a img {
   width: 0.4rem;
   height: 0.4rem;
   margin-right: 0.08rem;
-  vertical-align: middle;
 }
 
 .search span {
@@ -264,7 +268,6 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 2.24rem;
 }
 
 .ticket a {
@@ -284,6 +287,7 @@ body {
 }
 
 .ticket a span {
+  display: block;
   font-size: 0.32rem;
   color: #333333;
 }
@@ -316,7 +320,7 @@ body {
 }
 
 .travel .travel-text-2 {
-  display: inline-block;
+  display: block;
   font-size: 0.32rem;
   color: #666666;
   margin-top: 0.26667rem;
@@ -388,6 +392,15 @@ body {
   margin-left: 0.29333rem;
 }
 
+.travel-3 a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .travel-3 a:nth-child(1) {
   -webkit-box-flex: 6;
       -ms-flex: 6;
@@ -399,10 +412,8 @@ body {
   width: 2.05333rem;
 }
 
-.travel-3 a:nth-child(2) {
-  -webkit-box-flex: 4;
-      -ms-flex: 4;
-          flex: 4;
+.travel-3 a:nth-child(2) span {
+  padding-right: 0.13333rem;
 }
 
 .travel-3 a:nth-child(2) img {
@@ -1119,4 +1130,8 @@ body {
 .guess-like-content-bottom div img {
   width: 0.37333rem;
   height: 0.10667rem;
+}
+
+.guess-like-content:nth-child(2n+1) .guess-like-row .guess-like-content-bottom p {
+  color: #406196;
 }

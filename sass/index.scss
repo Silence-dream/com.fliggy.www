@@ -22,6 +22,7 @@ body {
     color: #333333;
 }
 
+
 /* 顶部导航 */
 .top-nav {
     position: relative;
@@ -79,6 +80,7 @@ body {
         a {
             display: block;
             height: 44rem/$baseFont;
+            line-height: 44rem/$baseFont;
         }
 
         .feizhu-user-list-content-one {
@@ -115,7 +117,8 @@ body {
     height: 44rem/$baseFont;
 
     a {
-        display: block;
+        display: flex;
+        align-items: center;
         // width: 351rem/$baseFont;
         height: 32rem/$baseFont;
         margin-left: 12rem/$baseFont;
@@ -125,13 +128,13 @@ body {
         border-bottom-right-radius: 50rem/$baseFont;
         border-bottom-left-radius: 50rem/$baseFont;
         background-color: #fff;
-        line-height: 32rem/$baseFont;
+        // line-height: 32rem/$baseFont;
 
         img {
             width: 15rem/$baseFont;
             height: 15rem/$baseFont;
             margin-right: 3rem/$baseFont;
-            vertical-align: middle;
+            // vertical-align: unset;
         }
     }
 
@@ -238,7 +241,7 @@ body {
 /* 回家买票 */
 .ticket {
     display: flex;
-    height: 84rem/$baseFont;
+    // height: 84rem/$baseFont;
 
     a {
         position: relative;
@@ -254,6 +257,7 @@ body {
         }
 
         span {
+            display: block;
             @include smFont();
         }
 
@@ -287,11 +291,12 @@ body {
     }
 
     .travel-text-2 {
-        display: inline-block;
+        display: block;
         font-size: 12rem/$baseFont;
         color: #666666;
         margin-top: 10rem/$baseFont;
         // padding-top: 10rem/$baseFont;
+
     }
 }
 
@@ -348,6 +353,9 @@ body {
     }
 
     a {
+        display: flex;
+        align-items: center;
+
         &:nth-child(1) {
             flex: 6;
             border-right: 1px solid #f4f4f4;
@@ -358,7 +366,11 @@ body {
         }
 
         &:nth-child(2) {
-            flex: 4;
+
+            // flex: 4;
+            span {
+                padding-right: 5rem/$baseFont;
+            }
 
             img {
                 width: 56rem/$baseFont;
@@ -1027,4 +1039,17 @@ body {
             height: 4rem/$baseFont;
         }
     }
+}
+
+.guess-like-content:nth-child(2n+1) {
+    // background-color: red;
+
+    .guess-like-row {
+        .guess-like-content-bottom {
+            p {
+                color: #406196;
+            }
+        }
+    }
+
 }
