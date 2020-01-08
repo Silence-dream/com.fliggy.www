@@ -124,7 +124,12 @@ header b {
 .top-info-right-content .top-info-right-content-2 {
   position: absolute;
   top: 0.34667rem;
-  right: 0.32rem;
+  right: 0.12rem;
+}
+
+.top-info-right-content .top-info-right-content-2 ul {
+  overflow: hidden;
+  height: 0.37333rem;
 }
 
 .top-info-right-content img {

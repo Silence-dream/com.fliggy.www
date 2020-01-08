@@ -79,7 +79,12 @@ header {
     .top-info-right-content-2 {
         position: absolute;
         top: 13rem/$baseFont;
-        right: 12rem/$baseFont;
+        right: 4.5rem/$baseFont;
+
+        ul {
+            overflow: hidden;
+            height: 14rem/$baseFont;
+        }
 
     }
 
