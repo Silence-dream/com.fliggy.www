@@ -1,0 +1,526 @@
+@import "common.scss";
+
+$baseFont:37.5;
+
+/* 盒子统一样式 */
+@mixin boxClass {
+    background-color: #ffffff;
+    margin-top: 10rem/$baseFont;
+    padding: 12rem/$baseFont;
+    border-radius: 6rem/$baseFont;
+}
+
+body {
+    background: #f7f7f7 url(../images/sign-bgc.png) no-repeat;
+    background-size: contain;
+    padding: 0rem 12rem/$baseFont;
+}
+
+header {
+    margin-top: 85rem/$baseFont;
+    margin-bottom: 12rem/$baseFont;
+
+    span {
+        font-size: 15rem/$baseFont;
+        color: rgba(255, 255, 255, 0.5);
+    }
+
+    i {
+        font-size: 15rem/$baseFont;
+        color: rgba(255, 255, 255, 0.5);
+    }
+
+    b {
+        font-size: 48rem/$baseFont;
+        color: #ffffff;
+    }
+
+
+}
+
+.top-info-row-1 {
+    display: flex;
+    align-items: center;
+
+    i {
+        font-size: 15rem/$baseFont;
+    }
+}
+
+.top-info-row-2 {
+    display: flex;
+    justify-content: space-between;
+
+    span {
+        color: #ffffff;
+    }
+}
+
+.top-info-right-content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 13rem/$baseFont;
+    color: #664f43;
+    background: url(../images/top-info-right-content.png) no-repeat;
+    background-size: cover;
+    height: 1.22667rem;
+    width: 3.25333rem;
+
+    .top-info-right-content-1 {
+        position: absolute;
+        top: 10rem/$baseFont;
+        left: 10rem/$baseFont;
+        border-radius: 100%;
+        overflow: hidden;
+    }
+
+    .top-info-right-content-2 {
+        position: absolute;
+        top: 13rem/$baseFont;
+        right: 4.5rem/$baseFont;
+
+        ul {
+            overflow: hidden;
+            height: 14rem/$baseFont;
+        }
+
+    }
+
+    img {
+        width: 31rem/$baseFont;
+        height: 31rem/$baseFont;
+    }
+}
+
+.top-info-row-4 {
+    display: flex;
+    font-size: 12rem/$baseFont;
+    align-items: center;
+    margin-top: 10rem/$baseFont;
+
+    strong {
+        flex: 1;
+        color: #ffffff99;
+    }
+
+    span {
+        flex: 1;
+        background-color: rgba(255, 255, 255, 0.12);
+        border-radius: 24rem/$baseFont;
+        margin: 0 3rem/$baseFont;
+        text-align: center;
+    }
+
+    a {
+        font-size: 12rem/$baseFont;
+        color: #ffffff;
+    }
+}
+
+/* 统一 */
+h3 {
+    color: #333333;
+    font-size: 18rem/$baseFont;
+}
+
+/* 签到领里程 大盒子*/
+.sign-journey {
+    @include boxClass();
+
+    p {
+        font-size: 12rem/$baseFont;
+        color: #abaeb3;
+    }
+}
+
+/* 签到图 */
+.sign-journey-mid {
+    display: flex;
+    margin-top: 20rem/$baseFont;
+
+    div {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    p {
+        margin-top: 5rem/$baseFont;
+    }
+
+    img {
+        width: 36rem/$baseFont;
+        height: 36rem/$baseFont;
+    }
+}
+
+/* 立即签到 */
+.sign-journey-footer {
+    text-align: center;
+    margin-top: 20rem/$baseFont;
+    border-radius: 6rem/$baseFont;
+
+
+    span {
+        display: inline-block;
+        background-color: #ffdd00;
+        padding: 0 30rem/$baseFont;
+        border-radius: 24rem/$baseFont;
+        // height: 31rem/$baseFont;
+        // line-height: 31rem/$baseFont;
+    }
+
+    a {
+        font-size: 15rem/$baseFont;
+        color: #333333;
+    }
+}
+
+
+
+/* 天天开奖 */
+.reward-day {
+    @include boxClass();
+}
+
+.reward-header {
+    display: flex;
+    align-items: center;
+    line-height: 1.2;
+
+
+    h3 {
+        margin-right: 6rem/$baseFont;
+    }
+
+    span,
+    a,
+    i {
+        font-size: 12rem/$baseFont;
+        color: #999999;
+    }
+
+    span {
+        display: flex;
+        flex: 1;
+    }
+}
+
+.reward-mid {
+    display: flex;
+    margin-top: 10rem/$baseFont;
+
+    a {
+        flex: 1;
+    }
+
+    img {
+        width: 100%;
+        border-radius: 6rem/$baseFont;
+    }
+}
+
+.reward-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10rem/$baseFont;
+}
+
+.reward-footer-title {
+    h4 {
+        font-size: 13rem/$baseFont;
+        color: #0f131a;
+    }
+
+    p {
+        font-size: 12rem/$baseFont;
+        color: #919499;
+    }
+}
+
+.reward-footer-part {
+    font-size: 14rem/$baseFont;
+    text-align: center;
+
+    div {
+        span {
+            background-color: #fd0;
+            color: #0f131a;
+            border-radius: 24rem/$baseFont;
+            padding: 0 12rem/$baseFont;
+        }
+    }
+
+    span {
+        font-size: 12rem/$baseFont;
+        color: #919499;
+        margin-top: 5rem/$baseFont;
+    }
+}
+
+.task-journey {
+    @include boxClass();
+}
+
+.task-journey-content {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10rem/$baseFont;
+
+    img {
+        width: 48rem/$baseFont;
+        height: 48rem/$baseFont;
+    }
+}
+
+.task-journey-content-row {
+    display: flex;
+    align-items: center;
+
+    h3 {
+        font-size: 15rem/$baseFont;
+        color: #333333;
+    }
+
+    span {
+        font-size: 12rem/$baseFont;
+        color: #999999;
+    }
+
+    .task-journey-content-row-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+
+        h3 {
+            margin-bottom: 5rem/$baseFont;
+        }
+    }
+
+    .task-journey-btn {
+
+        a {
+            background-color: #ffdd00;
+            border-radius: 15rem/$baseFont;
+            font-size: 12rem/$baseFont;
+            color: #333333;
+            padding: 2rem/$baseFont 8rem/$baseFont;
+        }
+    }
+}
+
+/*兑超值权益 */
+.supervalu {
+    @include boxClass();
+
+    .supervalu-content {
+        margin-top: 20rem/$baseFont;
+    }
+
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+        justify-content: space-between;
+    }
+
+    li {
+        // width: 76.98rem/$baseFont;
+        // height: 87rem/$baseFont;
+        background-color: #fff2eb;
+        border-radius: 12rem/$baseFont;
+        // width: 77rem/$baseFont;
+        margin-top: 6rem/$baseFont;
+        padding: 8rem/$baseFont 4rem/$baseFont;
+        border: 1px solid #ffe4cf;
+    }
+
+    h4 {
+        font-size: 14rem/$baseFont;
+        color: #ff401a;
+        margin-top: 10rem/$baseFont;
+    }
+
+    p,
+    span {
+        font-size: 12rem/$baseFont;
+        color: #333333;
+        margin-top: 9rem/$baseFont;
+    }
+
+    span {
+        display: block;
+        color: #ffffff;
+        background-color: #ff401a;
+        border-radius: 18rem/$baseFont;
+        padding: 2rem/$baseFont 5rem/$baseFont;
+    }
+}
+
+
+/* 玩游戏赢里程 */
+.play-games {
+    @include boxClass();
+    padding: 0;
+
+    .play-games-title {
+        padding: 0 12rem/$baseFont;
+    }
+
+    h3 {
+        height: 1.54667rem;
+        line-height: 1.54667rem;
+    }
+}
+
+.play-games-content {
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    li {
+        display: flex;
+        width: 175.5rem/$baseFont;
+        padding: 12rem/$baseFont;
+    }
+
+    div {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
+
+    .play-games-content-text1 {
+        font-size: 13rem/$baseFont;
+        color: #333333;
+    }
+
+    .play-games-content-text2 {
+        font-size: 12rem/$baseFont;
+        color: #999999;
+    }
+
+    img {
+        width: 44rem/$baseFont;
+        height: 44rem/$baseFont;
+    }
+}
+
+/* 里程兑换 */
+.exchange-journey {
+    @include boxClass();
+    font-size: 12rem/$baseFont;
+
+    a {
+        font-size: 12rem/$baseFont;
+
+    }
+}
+
+
+
+.exchange-journey-content {
+    li {
+        display: flex;
+        flex: 1;
+        align-items: center;
+        height: 90rem/$baseFont;
+        border: 1px solid #ffe1c6;
+        background-color: #fff2eb;
+        margin: 10rem/$baseFont 10rem/$baseFont;
+    }
+}
+
+.exchange-journey-content-left {
+    color: #ff401a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90rem/$baseFont;
+
+    i {
+        font-style: normal;
+    }
+
+    div {
+        &:nth-child(1) {
+            span {
+                font-size: 25rem/$baseFont;
+                font-weight: 700;
+            }
+        }
+    }
+}
+
+.exchange-journey-content-middle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+
+    b {
+        font-size: 13rem/$baseFont;
+        font-weight: 400;
+        color: #0f131a;
+    }
+
+    span {
+        font-size: 12rem/$baseFont;
+        color: #919499;
+    }
+}
+
+.exchange-journey-content-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 79rem/$baseFont;
+    height: 66rem/$baseFont;
+    border-left: 1px dashed #ffd7b3;
+
+    a {
+        color: #ffffff;
+        background-color: #ff401a;
+        border-radius: .64rem;
+        text-align: center;
+        line-height: .64rem;
+        font-weight: 700;
+        padding: 2rem/$baseFont 15rem/$baseFont;
+
+    }
+
+    span {
+        display: block;
+        color: #919499;
+        margin-top: 5rem/$baseFont;
+    }
+}
+
+div[class^=activity] {
+    @include boxClass();
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    a {
+        display: block;
+        font-size: 14rem/$baseFont;
+        color: #333333;
+    }
+
+    img {
+        width: 4rem/$baseFont;
+        height: 7rem/$baseFont;
+    }
+}
+
+div.activity2 {
+    // background-color: #f7f7f7;
+    background-color: transparent;
+    margin: 24rem/$baseFont 0 50rem/$baseFont;
+}

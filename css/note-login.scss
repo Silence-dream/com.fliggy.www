@@ -1,0 +1,37 @@
+$baseFont:37.5;
+
+
+
+.am-list-item span {
+    float: right;
+    font-size: 16rem/$baseFont;
+    color: #ff5000;
+    border-left: 1px solid #b5b5b5;
+    padding-left: 10rem/$baseFont;
+    margin-top: 10rem/$baseFont;
+}
+
+
+
+.user-login-btn {
+    margin: 22rem/$baseFont 23rem/$baseFont 0;
+
+    a {
+        display: block;
+    }
+
+    button {
+        // background: -webkit-linear-gradient(left, #ff9000, #ff5000) no-repeat;
+        border: 1px solid #ff5000;
+        background: #fff;
+        color: #ff5000;
+        // box-shadow: 0 0.08rem 0.16rem #f7c7b1;
+        font-size: .42666667rem;
+        width: 100%;
+        height: 1.2rem;
+        line-height: 1.2rem;
+        border-radius: .6rem;
+        text-align: center;
+        outline: 0;
+    }
+}

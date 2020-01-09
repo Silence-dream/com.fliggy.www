@@ -1,0 +1,1055 @@
+@import "common.scss";
+
+// 以375为基准
+$baseFont:37.5;
+
+body {
+    background: #f7f7f7 url(../images/background.webp);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    // height: 5000px;
+}
+
+// 版心
+.container {
+    padding-left: 12rem/$baseFont;
+    padding-right: 12rem/$baseFont;
+}
+
+// 小字体
+@mixin smFont {
+    font-size: 12rem/$baseFont;
+    color: #333333;
+}
+
+
+/* 顶部导航 */
+.top-nav {
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    img {
+        display: block;
+    }
+
+    .feizhu-logo {
+        width: 47rem/$baseFont;
+        height: 47rem/$baseFont;
+
+        img {
+            width: 100%;
+            height: 20rem/$baseFont;
+            margin-top: 20rem/$baseFont;
+            transform: translateY(-50%);
+        }
+    }
+
+    .feizhu-user {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        width: 30rem/$baseFont;
+        height: 30rem/$baseFont;
+
+        img {
+            width: 80%;
+            margin: 0 auto;
+        }
+    }
+}
+
+/* 用户的下拉菜单 */
+.feizhu-user-list {
+    display: none;
+    position: absolute;
+    top: 44rem/$baseFont;
+    right: 0px;
+    // width: 150rem/$baseFont;
+    background-color: #fff;
+    z-index: 80;
+
+    .feizhu-user-list-content {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        // align-items: center;
+        padding-right: 30rem/$baseFont;
+
+        a {
+            display: block;
+            height: 44rem/$baseFont;
+            line-height: 44rem/$baseFont;
+        }
+
+        .feizhu-user-list-content-one {
+            position: absolute;
+            top: -10rem/$baseFont;
+            right: -8rem/$baseFont;
+            width: 20rem/$baseFont;
+            height: 10rem/$baseFont;
+        }
+
+        img {
+            display: inline-block;
+            vertical-align: middle;
+            width: 24rem/$baseFont;
+            height: 24rem/$baseFont;
+            margin: 0 12rem/$baseFont;
+        }
+
+        span {
+            font-size: 15rem/$baseFont;
+            color: #333333;
+
+        }
+
+        div {
+            flex: 1;
+        }
+    }
+}
+
+
+/* 一个搜索栏用a做的 */
+.search {
+    height: 44rem/$baseFont;
+
+    a {
+        display: flex;
+        align-items: center;
+        // width: 351rem/$baseFont;
+        height: 32rem/$baseFont;
+        margin-left: 12rem/$baseFont;
+        margin-right: 12rem/$baseFont;
+        padding-left: 12rem/$baseFont;
+        border-top-left-radius: 50rem/$baseFont;
+        border-bottom-right-radius: 50rem/$baseFont;
+        border-bottom-left-radius: 50rem/$baseFont;
+        background-color: #fff;
+        // line-height: 32rem/$baseFont;
+
+        img {
+            width: 15rem/$baseFont;
+            height: 15rem/$baseFont;
+            margin-right: 3rem/$baseFont;
+            // vertical-align: unset;
+        }
+    }
+
+    span {
+        color: #666666;
+        font-size: 13rem/$baseFont;
+    }
+}
+
+/* 热搜 */
+.hot-search {
+    height: 36rem/$baseFont;
+
+    font-size: 13rem/$baseFont;
+
+    span {
+        color: #ffffff;
+        padding-left: 18rem/$baseFont;
+    }
+
+    a {
+        // display: inline-block;
+        font-size: 13rem/$baseFont;
+        color: #fff;
+        border: 0px solid black;
+        border-radius: 24px;
+        background-color: rgba(255, 255, 255, 0.2);
+        padding: 2rem/$baseFont 6rem/$baseFont;
+    }
+}
+
+
+
+/*轮播图  */
+.layout {
+    width: 100%;
+    // max-width: 750px;
+    // min-width: 320px;
+    margin: 0 auto;
+    position: relative;
+    // padding: 0 20px;
+
+    .banner {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+        border-radius: 6rem/$baseFont;
+
+        ul:first-child {
+            width: 1000%;
+            -webkit-transform: translateX(-10%);
+            transform: translateX(-10%);
+            // padding-left: 12rem/$baseFont;
+        }
+
+        ul:first-child li {
+            width: 10%;
+            float: left;
+
+            a {
+                display: block;
+                width: 100%;
+
+                img {
+                    // width: 351rem/$baseFont;
+                    // height: 109.5rem/$baseFont;
+                    width: 100%;
+                    display: block;
+                }
+            }
+        }
+
+    }
+
+
+}
+
+/* 控制小点点 */
+.banner ul:last-child {
+    position: absolute;
+    bottom: 0;
+    z-index: 10;
+    right: 30rem/$baseFont;
+
+    li {
+        width: 6px;
+        height: 6px;
+        border: 1px solid #fff;
+        border-radius: 50%;
+        display: inline-block;
+        margin-left: 0;
+    }
+
+    li:first-child {
+        margin-left: 0;
+    }
+
+    li.now {
+        background: #ffd62b;
+    }
+}
+
+
+/* 回家买票 */
+.ticket {
+    display: flex;
+    // height: 84rem/$baseFont;
+
+    a {
+        position: relative;
+        flex: 1;
+        text-align: center;
+
+        img {
+            display: block;
+            width: 70rem/$baseFont;
+            height: 57rem/$baseFont;
+            margin: 0 auto;
+            margin-top: 6px;
+        }
+
+        span {
+            display: block;
+            @include smFont();
+        }
+
+        .ticket-posit {
+            position: absolute;
+            top: 8px;
+            right: 36%;
+            transform: translateX(50%);
+            width: 1.7rem;
+            // height: 18rem/$baseFont;
+            color: #fff;
+            background-image: linear-gradient(to right, rgb(255, 165, 0), rgb(255, 81, 0));
+            border-radius: 50px;
+            padding: 2px 6px;
+        }
+    }
+}
+
+
+/* 旅游 */
+.travel {
+    // height: 118rem/$baseFont;
+    background-color: #fff;
+    border-radius: 15px;
+    margin-top: 10rem/$baseFont;
+
+    .travel-text-1 {
+        margin-top: 9.5rem/$baseFont;
+        font-size: 14rem/$baseFont;
+        color: #333333;
+    }
+
+    .travel-text-2 {
+        display: block;
+        font-size: 12rem/$baseFont;
+        color: #666666;
+        margin-top: 10rem/$baseFont;
+        // padding-top: 10rem/$baseFont;
+
+    }
+}
+
+// 黄色突出
+.travel-point {
+    background-color: #ffdd00;
+    border-radius: 9rem/$baseFont;
+    padding: 0 8rem/$baseFont;
+}
+
+.travel-1,
+.travel-2 {
+    display: flex;
+    height: 59rem/$baseFont;
+    text-align: center;
+
+    a {
+        flex: 1;
+        display: flex;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        border-bottom: 1px solid #f4f4f4;
+        border-right: 1px solid #f4f4f4;
+
+
+    }
+
+    div {
+        overflow: hidden;
+    }
+
+    a:nth-child(4) {
+        border-right: none;
+    }
+}
+
+.travel-3 {
+    height: 49.5rem/$baseFont;
+    display: flex;
+    align-items: center;
+
+    img {
+        vertical-align: middle;
+        height: 25rem/$baseFont;
+        margin-left: 12rem/$baseFont;
+    }
+
+    /* 设置字体的文字大小颜色 */
+    span {
+        color: #333333;
+        font-size: 13rem/$baseFont;
+        margin-left: 11rem/$baseFont;
+    }
+
+    a {
+        display: flex;
+        align-items: center;
+
+        &:nth-child(1) {
+            flex: 6;
+            border-right: 1px solid #f4f4f4;
+
+            img {
+                width: 77rem/$baseFont;
+            }
+        }
+
+        &:nth-child(2) {
+
+            // flex: 4;
+            span {
+                padding-right: 5rem/$baseFont;
+            }
+
+            img {
+                width: 56rem/$baseFont;
+            }
+        }
+    }
+}
+
+
+/* 飞猪app下载 */
+.fliggy-app {
+    display: flex;
+    background-color: #fff;
+    margin-top: 12rem/$baseFont;
+    height: 72rem/$baseFont;
+    align-items: center;
+    border-radius: 15px;
+
+    img {
+        // flex: 2;
+        width: 48rem/$baseFont;
+        height: 48rem/$baseFont;
+        margin-left: 12rem/$baseFont;
+    }
+
+    div {
+        flex: 1;
+        margin-left: 12rem/$baseFont;
+
+        h3 {
+            font-size: 15rem/$baseFont;
+            font-weight: 700;
+            color: #333333;
+        }
+    }
+
+    span {
+        font-size: 12rem/$baseFont;
+        color: #333333;
+    }
+
+    &>span {
+        display: block;
+        width: 75rem/$baseFont;
+        height: 24rem/$baseFont;
+        line-height: 24rem/$baseFont;
+        background-image: linear-gradient(to right, rgba(255, 231, 0, 0.99) 0.01%, rgba(255, 201, 0, 0.99) 100%);
+        border-radius: 15px;
+        text-align: center;
+        margin-right: 24rem/$baseFont;
+    }
+}
+
+/* 优惠券 */
+.coupon {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-top: 12rem/$baseFont;
+
+    a {
+        flex: 1;
+
+        h3 {
+            font-size: 15rem/$baseFont;
+            font-weight: 700;
+            color: #333333;
+            margin-bottom: 6rem/$baseFont;
+        }
+
+        span,
+        p {
+            font-size: 12rem/$baseFont;
+            color: #333333;
+        }
+
+        img {
+            display: block;
+            width: 117rem/$baseFont;
+            height: 72.5rem/$baseFont;
+            margin-top: 8rem/$baseFont;
+            margin: 0 auto;
+        }
+    }
+}
+
+/* 超级新发现 */
+.discovery {
+    display: flex;
+    height: 233rem/$baseFont;
+    border-radius: 6rem/$baseFont;
+    margin-top: 30rem/$baseFont;
+}
+
+.discovery-left {
+    flex: 1;
+    background: url(../images/discovery-backg-2.webp) no-repeat;
+    // height: 233rem/$baseFont;
+    background-size: 100% 100%;
+
+
+    a {
+        display: block;
+        height: 100%;
+
+        // 头部
+        &>div {
+            display: flex;
+            height: 44rem/$baseFont;
+            justify-content: space-between;
+            align-items: center;
+
+            img {
+                width: 50rem/$baseFont;
+                height: 17rem/$baseFont;
+                margin-left: 9rem/$baseFont;
+            }
+
+            div {
+                display: flex;
+                flex-direction: column;
+                margin-right: 5rem/$baseFont;
+            }
+
+            // 日期设置
+            span {
+                font-size: 14rem/$baseFont;
+                color: #ffc900;
+
+                &:last-child {
+                    font-size: 12rem/$baseFont;
+                }
+            }
+        }
+
+        // 中部文字
+        &>span {
+            display: block;
+            font-size: 14rem/$baseFont;
+            font-weight: 600;
+            color: #ffffff;
+            margin-left: 9rem/$baseFont;
+            margin-right: 24rem/$baseFont;
+            line-height: 20rem/$baseFont;
+        }
+
+        // 底部文字
+        p {
+            margin-top: 9rem/$baseFont;
+            margin-left: 9rem/$baseFont;
+
+            span {
+                font-size: 14rem/$baseFont;
+                background-image: linear-gradient(to right, rgb(255, 231, 0), rgb(255, 201, 0));
+                border-radius: 6rem/$baseFont;
+                padding: 0 6rem/$baseFont;
+            }
+        }
+    }
+}
+
+/* 右边的两个打折玩意 */
+.discovery-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 超级特卖 */
+.discovery-sale {
+    flex: 1;
+    background: url(../images/discovery-background.webp);
+    background-size: 100% 100%;
+
+    >img {
+        width: 53.5rem/$baseFont;
+        height: 17.5rem/$baseFont;
+        margin: 13.5rem/$baseFont 0 12rem/$baseFont 9.5rem/$baseFont;
+    }
+
+    // 设置字部分
+    div {
+
+        // 第一div
+        &:nth-of-type(1) {
+            margin-left: 9rem/$baseFont;
+            @include clearfix();
+
+            // background-color: red;
+            img {
+                float: left;
+                width: 13.5rem/$baseFont;
+                height: 13rem/$baseFont;
+                margin: 0 4rem/$baseFont;
+                vertical-align: middle;
+            }
+
+            span {
+                float: left;
+                font-size: 13rem/$baseFont;
+                color: #333333;
+                font-weight: 700;
+
+                // 最后字的修改
+                &:nth-of-type(3) {
+                    font-size: 12rem/$baseFont;
+                    color: #666666;
+                    font-weight: 400;
+                    margin-left: 3rem/$baseFont;
+                }
+            }
+        }
+
+        // 第二个div
+        &:nth-of-type(2) {
+            display: inline-block;
+            height: 22rem/$baseFont;
+            line-height: 22rem/$baseFont;
+            border-radius: 6rem/$baseFont;
+            margin: 9rem/$baseFont 0 0 9rem/$baseFont;
+            padding: 0 6rem/$baseFont 0 3rem/$baseFont;
+            @include clearfix();
+
+            span {
+                float: left;
+                font-size: 12rem/$baseFont;
+                color: #ffffff;
+
+                &:nth-of-type(2) {
+                    font-size: 14rem/$baseFont;
+                }
+            }
+
+            background-color: #ff5000;
+        }
+    }
+}
+
+/* 特价酒店 */
+.discovery-hotel {
+    flex: 1;
+    background: url(../images/discovery-background-2.webp);
+    background-size: cover;
+    background-position: center;
+
+    >span {
+        display: block;
+        font-size: 14rem/$baseFont;
+        font-weight: 700;
+        color: #ffffff;
+        margin: 12rem/$baseFont 0 0 9rem/$baseFont;
+    }
+
+    div {
+        display: inline-block;
+        height: 22rem/$baseFont;
+        line-height: 22rem/$baseFont;
+        border-radius: 6rem/$baseFont;
+        margin: 9rem/$baseFont 0 0 9rem/$baseFont;
+        padding: 0 6rem/$baseFont 0 3rem/$baseFont;
+        background-color: #ff5000;
+        @include clearfix();
+
+        span {
+            float: left;
+            color: #fff;
+
+            &:nth-child(1) {
+                font-size: 14rem/$baseFont;
+                font-weight: 700;
+            }
+
+            &:nth-child(2) {
+                font-size: 12rem/$baseFont;
+                margin-left: 3rem/$baseFont;
+            }
+        }
+    }
+}
+
+
+
+/* 当季旅游 */
+.season-travel {
+    margin-top: 40rem/$baseFont;
+}
+
+/*  设置头部标题 */
+.season-travel-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12rem/$baseFont;
+
+    h2 {
+        font-size: 24rem/$baseFont;
+        font-weight: 700;
+        color: #444444;
+        margin-left: 12rem/$baseFont;
+    }
+
+    span {
+        font-size: 13rem/$baseFont;
+        color: #666666;
+
+        img {
+            width: 12rem/$baseFont;
+            height: 12rem/$baseFont;
+            vertical-align: middle;
+        }
+    }
+}
+
+/* 设置底部旅游地 */
+.season-travel-bottom {
+    width: 100%;
+    overflow-x: auto;
+
+    ul {
+        width: 595rem/$baseFont;
+        height: 108rem/$baseFont;
+        margin-left: 12rem/$baseFont;
+    }
+
+    li {
+        float: left;
+        // display: inline-block;
+        width: 108rem/$baseFont;
+        height: 108rem/$baseFont;
+        background: url(../images/season-travel1.webp) no-repeat;
+        background-size: 100% 100%;
+        margin-right: 9rem/$baseFont;
+        border-radius: 6rem/$baseFont;
+
+        &:nth-of-type(2) {
+            background: url(../images/season-travel2.webp) no-repeat;
+            background-size: 100% 100%;
+        }
+
+        &:nth-of-type(3) {
+            background: url(../images/season-travel3.webp) no-repeat;
+            background-size: 100% 100%;
+        }
+
+        &:nth-of-type(4) {
+            background: url(../images/season-travel4.webp) no-repeat;
+            background-size: 100% 100%;
+        }
+
+        &:nth-of-type(5) {
+            background: url(../images/season-travel5.webp) no-repeat;
+            background-size: 100% 100%;
+        }
+    }
+
+    a {
+        display: block;
+
+    }
+
+    span {
+        display: inline-block;
+        font-size: 20rem/$baseFont;
+        font-weight: 700;
+        color: #fff;
+        margin: 72rem/$baseFont 0/$baseFont 0/$baseFont 12rem/$baseFont;
+    }
+}
+
+/* 旅行主题 */
+
+.motif-travel {
+    margin-top: 40rem/$baseFont;
+}
+
+.motif-travel-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12rem/$baseFont;
+
+    h2 {
+        font-size: 24rem/$baseFont;
+        color: #333333;
+    }
+
+    span {
+        font-size: 13rem/$baseFont;
+        color: #333333;
+    }
+}
+
+
+// 内容的统一样式
+.motif-travel-bottom {
+    a {
+        display: flex;
+        flex-direction: column;
+        place-content: flex-start flex-end;
+        height: 154rem/$baseFont;
+        color: #ffffff;
+        padding: 0 0 9rem/$baseFont 9rem/$baseFont;
+        border-radius: 6rem/$baseFont;
+    }
+
+    h3 {
+        font-size: 16rem/$baseFont;
+
+    }
+
+    span {
+        display: block;
+        font-size: 12rem/$baseFont;
+        margin: 3rem/$baseFont 0;
+    }
+}
+
+/* 内容第一行 */
+.motif-travel-bottom-1 {
+    display: flex;
+    margin-bottom: 8.5rem/$baseFont;
+
+
+    a {
+        // display: flex;
+        // flex-direction: column;
+        // place-content: flex-start flex-end;
+        // height: 154rem/$baseFont;
+        // color: #ffffff;
+        // padding: 0 0 9rem/$baseFont 9rem/$baseFont;
+        // border-radius: 6rem/$baseFont;
+
+        &:nth-child(1) {
+            // flex: 2;
+            width: 231rem/$baseFont;
+            background: url(../images/motif-travel1.webp) no-repeat;
+            background-size: cover;
+            background-position: center center;
+            margin-right: 8.5rem/$baseFont;
+
+        }
+
+        &:nth-child(2) {
+            // flex: 1;
+            width: 111rem/$baseFont;
+            background: url(../images/motif-travel2.webp) no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
+    }
+
+
+}
+
+
+/* 内容第二行 */
+.motif-travel-bottom-2 {
+    display: flex;
+
+    a {
+        // display: flex;
+        // flex-direction: column;
+        // place-content: flex-start flex-end;
+        // height: 154rem/$baseFont;
+        // color: #ffffff;
+        // padding: 0 0 9rem/$baseFont 9rem/$baseFont;
+        // border-radius: 6rem/$baseFont;
+        width: 111rem/$baseFont;
+
+        &:nth-child(1) {
+            // flex: 1;
+            background: url(../images/motif-travel3.webp) no-repeat;
+            background-size: cover;
+            background-position: center center;
+            margin-right: 8.5rem/$baseFont;
+
+        }
+
+        &:nth-child(2) {
+            // flex: 1;
+            background: url(../images/motif-travel4.webp) no-repeat;
+            background-size: cover;
+            background-position: center center;
+            margin-right: 8.5rem/$baseFont;
+        }
+
+        &:nth-child(3) {
+            // flex: 1;
+            background: url(../images/motif-travel5.webp) no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
+    }
+}
+
+
+/* 旅行直播 */
+.live-travel {
+    margin-top: 40rem/$baseFont;
+
+
+    a {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        place-content: flex-start flex-end;
+        height: 154rem/$baseFont;
+        color: #ffffff;
+        padding: 0 0 9rem/$baseFont 9rem/$baseFont;
+        border-radius: 6rem/$baseFont;
+
+
+
+        &:nth-child(1) {
+            background: url(../images/live-travel1.webp);
+            background-size: cover;
+            background-position: center;
+        }
+
+        &:nth-child(2) {
+            background: url(../images/live-travel2.webp);
+            background-size: cover;
+            background-position: center;
+        }
+    }
+}
+
+
+.live-travel-content {
+    display: flex;
+
+    h3 {
+        font-size: 14rem/$baseFont;
+    }
+
+
+
+    .live-travel-content-2 {
+        display: inline-block;
+        background-color: rgba(0, 0, 0, 0.6);
+        @include clearfix();
+        border-radius: 9rem/$baseFont;
+        // border-top-right-radius: 0.16rem;
+        // border-bottom-right-radius: 0.16rem;
+    }
+
+    img {
+        float: left;
+        width: 54rem/$baseFont;
+        height: 18rem/$baseFont;
+        vertical-align: middle;
+    }
+
+    span {
+        float: left;
+        // display: inline-block;
+        height: 18rem/$baseFont;
+        line-height: 18rem/$baseFont;
+        font-size: 12rem/$baseFont;
+        // background-color: rgba(0, 0, 0, 0.6);
+        padding: 0 6rem/$baseFont;
+    }
+}
+
+.guess-like {
+    margin-top: 40rem/$baseFont;
+
+
+}
+
+/* 猜你喜欢内容设置 */
+.guess-like-content {
+    display: flex;
+    margin-top: 12rem/$baseFont;
+
+    &:last-child {
+        margin-bottom: 100rem/$baseFont
+    }
+
+    .guess-like-row {
+        flex: 1;
+        border-radius: 9rem/$baseFont;
+
+        &:nth-child(1) {
+            margin-right: 8rem/$baseFont;
+        }
+
+        a {
+            // 设置上下盒子的排序
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
+
+// 父元素是a
+.guess-like-content-top,
+.guess-like-content-bottom {
+    flex: 1;
+}
+
+.guess-like-content-top {
+    img {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.guess-like-content-bottom {
+    background-color: #fff;
+    padding: 0 12rem/$baseFont;
+
+    p {
+        font-size: 12rem/$baseFont;
+        color: #ad4d18;
+        margin-top: 12rem/$baseFont;
+    }
+
+    h3 {
+        font-size: 13rem/$baseFont;
+        color: #333333;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        margin-top: 8rem/$baseFont;
+    }
+
+    div {
+        position: relative;
+        display: flex;
+        align-items: center;
+        margin-top: 9rem/$baseFont;
+        @include clearfix();
+
+        span {
+
+            // float: left;
+            color: #ff5000;
+
+            &:nth-child(1) {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                font-size: 12rem/$baseFont;
+            }
+
+            &:nth-child(2) {
+                font-size: 16rem/$baseFont;
+                margin-left: 6rem/$baseFont;
+            }
+
+            &:nth-child(3) {
+                font-size: 12rem/$baseFont;
+                color: #999999;
+                margin-left: 4rem/$baseFont;
+                margin-right: 40rem/$baseFont;
+            }
+        }
+
+        img {
+            // float: right;
+            width: 14rem/$baseFont;
+            height: 4rem/$baseFont;
+        }
+    }
+}
+
+.guess-like-content:nth-child(2n+1) {
+    // background-color: red;
+
+    .guess-like-row {
+        .guess-like-content-bottom {
+            p {
+                color: #406196;
+            }
+        }
+    }
+
+}
